@@ -151,3 +151,64 @@ if (orderStatus === 'delivered') {
     console.log('Your order has been delivered!');
 }
 
+
+/**
+ *  ARRAYS - FUNDAMENTALS
+ */
+
+let prices: number[] = [100, 75, 42, 21, 60];
+
+// Example: Read and use `prices`
+console.log('Prices:', prices); // Output the array
+
+let fruit: string[] = ['apple', 'orange'];
+
+// Example: Use `fruit`
+fruit.forEach((f) => console.log('Fruit:', f)); // Log each fruit
+
+let array: (string | boolean)[] = ['apple', true, 'orange', false];
+
+// Example: Use `array`
+console.log('Mixed Array:', array); // Log the entire array
+
+
+/**
+ * ======================= SOLUTION CHALLENGE 3
+ */
+
+// 1. Temperatures
+let temperatures: number[] = [20, 38, 16];
+console.log(temperatures);
+
+// TypeScript Error: Argument of type 'string' is not assignable to parameter of type 'number'.
+// temperatures.push('56'); // This will cause an error
+
+// Fix: Push a number instead
+temperatures.push(56); // Correct type
+console.log(temperatures);
+
+// 2. Colors
+let colors: string[] = ['blue', 'red', 'yellow'];
+
+// TypeScript Error: Argument of type 'boolean' is not assignable to parameter of type 'string'.
+// colors.push(true); // This will cause an error
+
+// Fix: Push a string instead
+colors.push('green'); // Correct type
+console.log(colors);
+
+// 3. Mixed Array
+let mixedArray: (number | string)[] = [20, 'blue', 38, 'yellow'];
+console.log(mixedArray);
+
+// TypeScript Error: Argument of type 'boolean' is not assignable to parameter of type 'string | number'.
+// mixedArray.push(true); // This will cause an error
+
+// Fix: Only push `number` or `string` values
+mixedArray.push(42); // Correct type
+mixedArray.push('green'); // Correct type
+console.log(mixedArray);
+
+
+
+
