@@ -69,26 +69,6 @@ awesomeName = awesomeName.toUpperCase();
 - Try to assign a value of a different type to each of these variables and observe the TypeScript compiler's response.
 - You can use type annotation or inference
 
-```ts
-// 1. String
-let greeting: string = 'Hello, TypeScript!';
-greeting = greeting.toUpperCase(); // This should work fine
-
-// 2. Number
-let age: number = 25;
-age = age + 5; // This should work fine
-
-// 3. Boolean
-let isAdult: boolean = age >= 18;
-isAdult = !isAdult; // This should work fine
-
-// 4. Assigning different types
-// Uncommenting any of these will result in a TypeScript error
-// greeting = 10; // Error: Type 'number' is not assignable to type 'string'
-// age = 'thirty'; // Error: Type 'string' is not assignable to type 'number'
-// isAdult = 'yes'; // Error: Type 'string' is not assignable to type 'boolean'
-```
-
 ## Setup Info
 
 - even with error you can run the project but you won't be able to build it "npm run build"
@@ -100,13 +80,31 @@ In TypeScript, a Union Type allows a variable to hold a value of multiple, disti
 ```ts
 let tax: number | string = 10;
 tax = 100;
-tax = '$10';
+tax = '10FCFA';
+console.log(`The tax is now: ${tax}`); 
 
 // fancy name - literal value type
 let requestStatus: 'pending' | 'success' | 'error' = 'pending';
 requestStatus = 'success';
 requestStatus = 'error';
 // requestStatus = 'random';
+```
+
+```ts
+// fancy name - literal value type
+let requestStatus: 'pending' | 'success' | 'error' = 'pending';
+
+requestStatus = 'success';
+
+if (requestStatus === 'success') {
+  console.log('The request was successful!');
+}
+
+requestStatus = 'error';
+
+if (requestStatus === 'error') {
+  console.error('The request failed.');
+}
 ```
 
 ## Type - "any"
@@ -116,18 +114,28 @@ In TypeScript, the "any" type is a powerful way to work with existing JavaScript
 ```ts
 let notSure: any = 4;
 notSure = 'maybe a string instead';
-notSure = false; // okay, definitely a boolean
+notSure = false;
+
+let notSure: any = 4;
+notSure = 'maybe a string instead';
+console.log(notSure);
+
+notSure = false; 
+if (typeof notSure === 'boolean') {
+  console.log('It is now a boolean:', notSure); 
+}
+
 ```
 
 ## Practical Application of Type Annotation
 
 ```ts
-const books = ['1984', 'Brave New World', 'Fahrenheit 451'];
+const books = ['2025', 'Brave New World', 'Fahrenheit 451'];
 
 let foundBook: string | undefined;
 
 for (let book of books) {
-  if (book === '1984') {
+  if (book === '2025') {
     foundBook = book;
     foundBook = foundBook.toUpperCase();
     break;
@@ -143,19 +151,6 @@ The reason to explicitly type foundBook as string | undefined is to make it clea
 
 - Create a variable orderStatus of type 'processing' | 'shipped' | 'delivered' and assign it the value 'processing'. Then, try to assign it the values 'shipped' and 'delivered'.
 - Create a variable discount of type number | string and assign it the value 20. Then, try to assign it the value '20%'.
-
-```ts
-// 1. Order Status
-let orderStatus: 'processing' | 'shipped' | 'delivered' = 'processing';
-orderStatus = 'shipped';
-orderStatus = 'delivered';
-// orderStatus = 'cancelled'; // This will result in a TypeScript error
-
-// 2. Discount
-let discount: number | string = 20;
-discount = '20%';
-// discount = true; // This will result in a TypeScript error
-```
 
 ## Arrays - Fundamentals
 
