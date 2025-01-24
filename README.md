@@ -179,3 +179,29 @@ console.log('Mixed Array:', array); // Log the entire array
 - Create an array colors of type string[] and assign it some values. Then, try to add a boolean value to it.
 - Create an array mixedArray of type (number | string)[] and assign it some values. Then, try to add a boolean value to it.
 
+## Objects - Fundamentals
+
+In TypeScript, an object is a collection of key-value pairs with specified types for each key, providing static type checking for properties.
+
+```ts
+let car: { brand: string; year: number } = { brand: 'toyota', year: 2020 };
+car.brand = 'ford';
+// car.color = 'blue';
+
+let car1: { brand: string; year: number } = { brand: 'audi', year: 2021 };
+// let car2: { brand: string; year: number } = { brand: 'audi' };
+
+let book = { title: 'book', cost: 20 };
+let pen = { title: 'pen', cost: 5 };
+let notebook = { title: 'notebook' };
+
+let items: { readonly title: string; cost?: number }[] = [book, pen, notebook];
+
+items[0].title = 'new book'; // Error: Cannot assign to 'title' because it is a read-only property
+```
+
+## Challenge 4
+
+- Create an object bike of type { brand: string, year: number } and assign it some values. Then, try to assign a string to the year property.
+- Create an object laptop of type { brand: string, year: number } and try to assign an object with missing year property to it.
+- Create an array products of type { title: string, price?: number }[] and assign it some values. Then, try to add an object with a price property of type string to it.

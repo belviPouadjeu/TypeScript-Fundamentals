@@ -209,6 +209,63 @@ mixedArray.push(42); // Correct type
 mixedArray.push('green'); // Correct type
 console.log(mixedArray);
 
+/**
+ *  OBJECTS - FUNDAMENTALS
+ */
 
+// Car example
+let car: { brand: string; year: number } = { brand: 'toyota', year: 2020 };
+car.brand = 'ford';
+// car.color = 'blue'; // Error: Property 'color' does not exist on type '{ brand: string; year: number }'
 
+// Use car1 to avoid the "never read" error
+let car1: { brand: string; year: number } = { brand: 'audi', year: 2021 };
+console.log(car1.brand); // Use the variable
 
+// let car2: { brand: string; year: number } = { brand: 'audi' }; // Error: Property 'year' is missing
+
+// Items example
+let book = { title: 'book', cost: 20 };
+let pen = { title: 'pen', cost: 5 };
+let notebook = { title: 'notebook' };
+
+// let items: { readonly title: string; cost?: number }[] = [book, pen, notebook];
+
+// // Create a new object with the updated title
+// items[0] = { ...items[0], title: 'new book' };
+// console.log(items[0].title); // Output: new book
+
+// Remove `readonly` to allow modifications
+let items: { title: string; cost?: number }[] = [book, pen, notebook];
+
+// Now this works
+items[0].title = 'new book';
+console.log(items[0].title); // Output: new book
+
+/**
+ * ======================= SOLUTION CHALLENGE 4
+ */
+
+// 1: Create the bike Object
+let bike: { brand: string, year: number } = { brand: 'toto', year: 2021 };
+
+// Try to assign a string to the year property (this will cause an error)
+// bike.year = '2022'; // Error: Type 'string' is not assignable to type 'number'.
+
+// Correct: Assign a number to the year property
+bike.year = 2022;
+
+// 2: Create the laptop Object
+let laptop: { brand: string, year: number } = { brand: 'toto', year: 2021 };
+console.log(laptop.brand); // Use the variable to avoid the "never read" error
+
+// let laptop2: { brand: string, year: number } = { brand: 'toto' }; // Error: Property 'year' is missing.
+
+// 3. Create Products
+let product1 = { title: 'Shirt', price: 20 };
+let product2 = { title: 'Pants' };
+let products: { title: string; price?: number }[] = [product1, product2];
+console.log(products); // Use the variable to avoid the "never read" error
+
+// Try to add an object with a price property of type string (this will cause an error)
+// products.push({ title: 'Shoes', price: 'expensive' }); // Error: Type 'string' is not assignable to type 'number'.
