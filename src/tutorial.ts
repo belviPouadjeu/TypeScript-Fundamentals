@@ -1,19 +1,28 @@
-let awesomeName: string = 'belvinard'
-awesomeName = 'something'
-awesomeName.toUpperCase()
+let awesomeName: string = 'belvinard';
+awesomeName = 'something';
+awesomeName.toUpperCase();
 console.log(awesomeName);
 
 // awesomeName = 20;
 
 let amount: number = 20;
 amount = 10 - 1;
+console.log(amount); // Use the variable
+
 // amount = 'pants';
 
 let isAwesome: boolean = true;
 isAwesome = false;
+console.log(isAwesome); // Use the variable
+
 // isAwesome = 'belvinard'
 
-/ 1. String
+
+/**
+ *  CHALLENGE 1
+ */
+
+// 1. String
 let greeting: string = 'Hello, TypeScript!';
 greeting = greeting.toUpperCase(); // This should work fine
 
