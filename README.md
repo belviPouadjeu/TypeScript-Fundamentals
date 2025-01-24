@@ -34,7 +34,7 @@ import './tutorial.ts';
 TypeScript Type Annotations allow developers to specify the types of variables, function parameters, return types, and object properties.
 
 ```ts
-let awesomeName: string = 'shakeAndBake';
+let awesomeName: string = 'belvinard';
 awesomeName = 'something';
 awesomeName = awesomeName.toUpperCase();
 // awesomeName = 20;
@@ -47,7 +47,7 @@ amount = 12 - 1;
 
 let isAwesome: boolean = true;
 isAwesome = false;
-// isAwesome = 'shakeAndBake';
+// isAwesome = 'belvinard';
 ```
 
 ## Type Inference
@@ -55,7 +55,7 @@ isAwesome = false;
 The typescript compiler can infer the type of the variable based on the literal value that is assigned when it is defined. Just make sure you are working in the typescript file 😄
 
 ```ts
-let awesomeName = 'shakeAndBake';
+let awesomeName = 'belvinard';
 awesomeName = 'something';
 awesomeName = awesomeName.toUpperCase();
 // awesomeName = 20;
@@ -2261,7 +2261,7 @@ class Person implements IPerson {
   }
 }
 
-const hipster = new Person('shakeAndBake', 100);
+const hipster = new Person('belvinard', 100);
 hipster.greet();
 ```
 
