@@ -269,3 +269,72 @@ console.log(products); // Use the variable to avoid the "never read" error
 
 // Try to add an object with a price property of type string (this will cause an error)
 // products.push({ title: 'Shoes', price: 'expensive' }); // Error: Type 'string' is not assignable to type 'number'.
+
+
+/**
+ *  FUNCTIONS- FUNDAMENTALS
+ */
+
+function sayHi(name: string){
+    console.log(`Hello there ${name.toUpperCase()}`);
+}
+
+sayHi('Belvinard');
+// sayHi(3)
+// sayHi('peter', 'random');
+
+function calculateDiscount(price: number): number{
+    // price.toUpperCase();
+    const hasDiscount = true;
+    if(hasDiscount){
+        return price;
+        // return 'Discount Applied';
+    }
+
+    return price * 0.9;
+
+}
+
+const finalPrice = calculateDiscount(500);
+console.log(finalPrice);
+
+// "any" example
+function addThree(number: any) {
+    let anotherNumber: number = 3;
+    return number + anotherNumber;
+}
+    const result = addThree(2);
+    const someValue = result;
+console.log(someValue);
+
+
+// run time error
+// someValue.myMethod();
+
+
+/**
+ * ======================= SOLUTION CHALLENGE 5
+ */
+// - Create a new array of names.
+// - Write a new function that checks if a name is in your array. This function should take a name as a parameter and return a boolean.
+// - Use this function to check if various names are in your array and log the results.
+
+// Step 1: Create an array of names
+let arrayNames: string[] = ["toto", "zoa", "Yapo", "Rico"];
+
+// Step 2: Write a function to check if a name exists in the array
+function checkNameInArray(name: string): boolean {
+    for (let tempName of arrayNames) {
+        if (tempName === name) { // Check if the current name matches the input name
+            return true; // Return true if the name is found
+        }
+    }
+    return false; // Return false if the name is not found
+}
+
+// Step 3: Use the function to check for various names and log the results
+console.log(checkNameInArray("toto")); // true
+console.log(checkNameInArray("Yapo")); // true
+console.log(checkNameInArray("Alice")); // false
+console.log(checkNameInArray("Rico")); // true
+console.log(checkNameInArray("John")); // false

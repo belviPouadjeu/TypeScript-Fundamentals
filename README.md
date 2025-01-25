@@ -205,3 +205,48 @@ items[0].title = 'new book'; // Error: Cannot assign to 'title' because it is a 
 - Create an object bike of type { brand: string, year: number } and assign it some values. Then, try to assign a string to the year property.
 - Create an object laptop of type { brand: string, year: number } and try to assign an object with missing year property to it.
 - Create an array products of type { title: string, price?: number }[] and assign it some values. Then, try to add an object with a price property of type string to it.
+
+
+## Functions - Fundamentals
+
+In TypeScript, functions can have typed parameters and return values, which provides static type checking and autocompletion support.
+
+```ts
+function sayHi(name: string) {
+  console.log(`Hello there ${name.toUpperCase()}!!!`);
+}
+
+sayHi('Belvinard');
+// sayHi(3)
+// sayHi('peter', 'random');
+
+function calculateDiscount(price: number): number {
+  // price.toUpperCase();
+  const hasDiscount = true;
+  if (hasDiscount) {
+    return price;
+    // return 'Discount Applied';
+  }
+  return price * 0.9;
+}
+
+const finalPrice = calculateDiscount(500);
+console.log(finalPrice);
+
+// "any" example
+function addThree(number: any) {
+  let anotherNumber: number = 3;
+  return number + anotherNumber;
+}
+const result = addThree(2);
+const someValue = result;
+
+// run time error
+someValue.myMethod();
+```
+
+## Challenge 4
+
+- Create a new array of names.
+- Write a new function that checks if a name is in your array. This function should take a name as a parameter and return a boolean.
+- Use this function to check if various names are in your array and log the results.
